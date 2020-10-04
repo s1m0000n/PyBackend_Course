@@ -1,5 +1,5 @@
 from re import split
-from copy import copy
+from itertools import chain
 
 
 class XOGame:
@@ -8,41 +8,31 @@ class XOGame:
         self.dim = dim
         self.board = [['_' for _ in range(dim)] for _ in range(dim)]
 
-    @staticmethod
-    def choose(options):
-        for i, v in enumerate(options):
-            print(f'{i + 1}. {v}')
-        answer = input('Введите ваш ответ: ')
-        try:
-            answer = int(answer)
-        except ValueError:
-            print('Невозможно выбрать такой ответ, введите число. Попробуйте снова.')
-            return XOGame.choose(options)
-        else:
-            if answer > len(options) or answer <= 0:
-                print('Невозможно выбрать такой ответ, попробуйте снова')
-                return XOGame.choose(options)
-            return answer
-
     def start(self):
         print('Крестики-Нолики Remastered Gold Edition')
         print('В любой момент игры вы можете ввести комманды:')
         print(' help - посмотреть правила игры')
         print(' valid x y - возможно ли сделать такой ход')
-        print('Выберите режим игры:')
-        if self.choose(('С компьютером(он сегодня злой)', 'Вдвоём')) == 1:
-            self.with_computer()
-        else:
-            self.two_players()
+        print('Выберите начинающего игрока (Игрок X) и поехали!')
+        input('Нажмите Enter...')
+        while True:
+            self.user_play('X')
+            if (w := self.is_winner()) is not None:
+                print(f'Player {w} is the winner!' if w != 'Tie' else w)
+                self.show_board()
+                return w
 
-    def with_computer(self):
-        pass
+            self.user_play('O')
+            if (w := self.is_winner()) is not None:
+                print(f'Player {w} is the winner!' if w != 'Tie' else w)
+                self.show_board()
+                return w
 
-    def show_board(self, board = None):
+    def show_board(self, board=None):
         if board is None:
             board = self.board
         l_pad = ' ' * 3
-        space_inside = lambda c, lr='': lr + c * (self.dim * 5 - 2) + lr
+        space_inside = lambda c, lr='': lr + c * (self.dim * 5 - (self.dim-1)) + lr
         row = lambda r: '░  ' + '   '.join(r) + '  ░'
         print()
         print(l_pad * 2, end='')
@@ -62,34 +52,28 @@ class XOGame:
         print('Текущее состояние доски:')
         self.show_board()
         x, y = self.is_valid_analyze(self.input())
-        temp = copy(self.board)
-        temp[x][y] = name
-        print('Состояние доски после вашего хода')
-        self.show_board(temp)
-
-        if self.choose(('Подтвердить ход', 'Изменить ход')) == 2:
-            # TODO: fix this!
-            # Troubles with changing choice
-            temp = self.board
-            self.user_play(name)
-        else:
-            self.board = temp
-
-    def two_players(self):
-        print('Выберите начинающего игрока (Игрок X) и поехали!')
-        input('Нажмите Enter...')
-        # checking for winners
-        while True:
-            self.user_play('X')
-            self.is_winner()
-            self.user_play('O')
-            self.is_winner()
+        self.board[x][y] = name
 
     def is_winner(self):
+        # TODO: Убрать повторения
         # check who is the winner
-        pass
-        # return winner name(X, O) or None
-
+        # returns winner name(X, O) or None
+        if '_' not in list(chain(*self.board)):
+            return 'Tie'
+        for line in self.board:
+            if ''.join(line) == line[0] * self.dim and line[0] != '_':
+                return line[0]
+        for row_i in range(self.dim):
+            row = [line[row_i] for line in self.board]
+            if ''.join(row) == row[0] * self.dim and row[0] != '_':
+                return row[0]
+        leading_diagonal = [row[i] for i, row in enumerate(self.board)]
+        if ''.join(leading_diagonal) == leading_diagonal[0] * self.dim and leading_diagonal[0] != '_':
+            return leading_diagonal[0]
+        opposing_diagonal = [row[-i - 1] for i, row in enumerate(self.board)]
+        if ''.join(opposing_diagonal) == opposing_diagonal[0] * self.dim and opposing_diagonal[0] != '_':
+            return opposing_diagonal[0]
+        return None
 
     def input(self):
         inp = input('>> ').lower()
@@ -134,7 +118,7 @@ class XOGame:
             return None
 
     def is_valid_analyze(self, t):
-        x,y = t
+        x, y = t
         iv = self.is_valid(x, y)
         if iv:
             return x, y
@@ -155,5 +139,5 @@ class XOGame:
 
 
 if __name__ == '__main__':
-    game1 = XOGame(3)
+    game1 = XOGame(6)
     game1.start()
