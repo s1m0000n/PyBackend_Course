@@ -1,8 +1,8 @@
 ************* Module tic_tac_toe
-tic_tac_toe.py:55:8: R1705: Unnecessary "else" after "return" (no-else-return)
-tic_tac_toe.py:61:32: W0108: Lambda may not be necessary (unnecessary-lambda)
-tic_tac_toe.py:139:12: R1705: Unnecessary "else" after "return" (no-else-return)
+tic_tac_toe.py:57:8: R1705: Unnecessary "else" after "return" (no-else-return)
+tic_tac_toe.py:118:25: W0108: Lambda may not be necessary (unnecessary-lambda)
+tic_tac_toe.py:148:12: R1705: Unnecessary "else" after "return" (no-else-return)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.59/10 (previous run: 9.59/10, +0.00)
+Your code has been rated at 9.61/10 (previous run: 9.61/10, +0.00)
 
