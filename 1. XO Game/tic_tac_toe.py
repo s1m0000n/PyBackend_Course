@@ -57,16 +57,18 @@ class XOGame:
         if inp == 'help':
             self.show_help()
             return self.input()
+        elif inp == 'quit':
+            quit()
         else:
             # parsing input
             try:
                 parsed = self.parse(inp)
             except ValueError:
-                print('Попробуйте снова, введите 2 числа или комманду help')
+                print('Попробуйте снова, введите 2 числа или комманды help или quit')
                 return self.input()
             else:
                 if len(parsed) != 2:
-                    print('Попробуйте снова, введите РОВНО 2 числа или комманду help')
+                    print('Попробуйте снова, введите РОВНО 2 числа или комманды help или quit')
                     return self.input()
                 return parsed
 
