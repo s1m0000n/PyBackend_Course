@@ -6,13 +6,5 @@
    - [x] Проверить линтером (pylint score 9.61)
 
 2. Домашнее задание 2
-   1. LRU Cache
-      - [ ] class & init
-      - [ ] set
-      - [ ] get
-      - [ ] delete
-   2. Vectors Implementation using standart list class
-      - [ ] Векторное вычитание
-      - [ ] Векторное сложение
-      - [ ] При неравной длине, дополнять меньший список нулями только на время выполнения операции Исходные списки не должны изменяться
-      - [ ] При сравнении списков должна сравниваться сумма элементов списков
+   - [x] LRU Cache
+   - [ ] Vectors Implementation using standart list class
