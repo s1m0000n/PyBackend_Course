@@ -7,4 +7,5 @@
 
 2. Домашнее задание 2
    - [x] LRU Cache
-   - [ ] Vectors Implementation using standart list class
+   - [x] Vectors Implementation using standart list class
+   - [ ] Tests & Linter Checks
