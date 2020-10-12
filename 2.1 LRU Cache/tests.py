@@ -17,6 +17,7 @@ class LruTests(unittest.TestCase):
     def test_ordering(self):
         lru = LRUCache(3)
         lru.update({'Alice': 'Clark', 'Mark': 'Shagal'})
+        lru['Keanu'] = 'Reeves'
         lru['Alice'] = 'Rostova'
         _ = lru['Mark']
         self.assertEqual(list(lru.keys()), ['Keanu', 'Alice', 'Mark'])
@@ -28,7 +29,15 @@ class LruTests(unittest.TestCase):
         _ = lru['Alice']
         lru['Leonardo'] = 'Da Vinci'
         self.assertEqual(lru.get('Mark'), '')
-        
+        lru.delete('Keanu')
+        self.assertEqual(lru.get('Keanu'), '')
+        del lru['Leonardo']
+        self.assertEqual(lru.get('Leonardo'), '')
+
+    def test_never_existed(self):
+        lru = LRUCache(10)
+        self.assertEqual(lru.get('Anon'), '')
+
 
 if __name__ == '__main__':
     unittest.main()
