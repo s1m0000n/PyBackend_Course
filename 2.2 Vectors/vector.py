@@ -7,7 +7,7 @@ class Vector(list):
             raise ValueError
         diff = len(other) - len(self)
         return Vector(map(lambda x, y: x + y,
-                          (self if diff > 0 else other) + [0] * abs(diff),
+                          list(self if diff > 0 else other) + [0] * abs(diff),
                           other if diff > 0 else self))
 
     def __sub__(self, other):
@@ -15,8 +15,8 @@ class Vector(list):
             raise ValueError
         diff = len(other) - len(self)
         return Vector(map(lambda x, y: x - y,
-                          self + ([0] * abs(diff) if diff > 0 else []),
-                          other + ([] if diff >= 0 else [0] * abs(diff))))
+                          list(self) + ([0] * abs(diff) if diff > 0 else []),
+                          list(other) + ([] if diff >= 0 else [0] * abs(diff))))
 
     def __eq__(self, other):
         if not isinstance(other, (list, Vector)):
