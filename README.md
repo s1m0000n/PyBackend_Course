@@ -8,4 +8,4 @@
 2. Домашнее задание 2
    - [x] LRU Cache
    - [x] Vectors Implementation using standart list class
-   - [ ] Tests & Linter Checks
+   - [x] Tests & Linter Checks
