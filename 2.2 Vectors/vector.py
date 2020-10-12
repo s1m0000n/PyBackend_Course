@@ -1,4 +1,5 @@
 class Vector(list):
+    """Vector implementation based on lists"""
     def __init__(self, initial_data):
         super().__init__(initial_data)
 

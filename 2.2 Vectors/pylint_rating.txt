@@ -1,0 +1,8 @@
+************* Module vector
+vector.py:50:0: C0304: Final newline missing (missing-final-newline)
+vector.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+vector.py:3:4: W0235: Useless super delegation in method '__init__' (useless-super-delegation)
+
+------------------------------------------------------------------
+Your code has been rated at 9.19/10 (previous run: 9.19/10, +0.00)
+
