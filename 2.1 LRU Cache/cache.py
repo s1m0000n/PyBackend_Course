@@ -2,6 +2,8 @@ from collections import OrderedDict
 
 
 class LRUCache(OrderedDict):
+    """LRU(least recently used) caching implementation based on OrderedDict
+    with higher level wrappers"""
     def __init__(self, size=10) -> None:
         super().__init__()
         self.size = size
@@ -22,10 +24,14 @@ class LRUCache(OrderedDict):
         super().__delitem__(key)
 
     def set(self, key: str, value: str) -> None:
+        """Higher level wrapper of __setitem__"""
         self[key] = value
 
     def get(self, key: str) -> str:
+        """Higher level wrapper of __getitem__
+        In case of absence returns '' instead of raising KeyError"""
         return self[key] if key in self else ''
 
     def delete(self, key: str) -> None:
+        """Higher level wrapper of __delitem__"""
         self.__delitem__(key)
