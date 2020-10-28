@@ -12,6 +12,7 @@ class XOGame:
     """Class for the game Tic Tac Toe on any n*n field"""
 
     def __init__(self, dim=3):
+        # TODO !
         assert dim > 0, 'Невозможно создать поле отрицательной или ' \
                         'нулевой размерности(в нашем мире)'
         self.dim = dim
@@ -117,15 +118,13 @@ class XOGame:
         """Parses raw input
         Returns:
             (int,)"""
-        return tuple(map(lambda x: int(x),
+        return tuple(map(int,
                          filter(lambda x: x != '',
-                                split(r'[;,./:\s]', raw_text.strip()))))
+                                split(r'[;,/:\s]', raw_text.strip()))))
 
     def is_winner(self):
         """Returns:
             winner name: 'X', 'O' or None"""
-        if '_' not in list(chain(*self.board)):
-            return 'Tie'
         for sequence in [self.board,  # lines
                          [[line[i] for line in self.board] for i in range(self.dim)],  # rows
                          [[row[i] for i, row in enumerate(self.board)],
@@ -133,6 +132,8 @@ class XOGame:
             for line in sequence:
                 if ''.join(line) == line[0] * self.dim and line[0] != '_':
                     return line[0]
+        if '_' not in list(chain(*self.board)):
+            return 'Tie'
         return None
 
     def is_valid(self, coords, recursive=True):

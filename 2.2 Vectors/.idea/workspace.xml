@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64cf88bb-4926-4fe4-a965-cef8f21e0d59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../1. XO Game/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1. XO Game/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1. XO Game/tic_tac_toe.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1. XO Game/tic_tac_toe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2.1 LRU Cache/cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/../2.1 LRU Cache/cache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2.1 LRU Cache/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../2.1 LRU Cache/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/vector.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1imAi3XTwZW3bwyj9HPb0i5GRCZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests in tests.py">
+    <configuration name="Unittests for tests.VectorTests.test_comparissons" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="2.2 Vectors" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.VectorTests.test_comparissons&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="2.2 Vectors" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests in tests.py" />
+        <item itemvalue="Python tests.Unittests for tests.VectorTests.test_comparissons" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64cf88bb-4926-4fe4-a965-cef8f21e0d59" name="Default Changelist" comment="" />
+      <created>1602502516124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602502516124</updated>
+      <workItem from="1602502517203" duration="2228000" />
+      <workItem from="1602597857159" duration="94000" />
+      <workItem from="1602598384669" duration="599000" />
+      <workItem from="1602602392371" duration="1308000" />
+      <workItem from="1602675628995" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2087" height="171" key="GridCell.Tab.0.bottom" timestamp="1602613791598">
+      <screen x="59" y="27" width="2133" height="1206" />
+    </state>
+    <state width="2146" height="326" key="GridCell.Tab.0.bottom/0.27.2192.1206@0.27.2192.1206" timestamp="1602510993006" />
+    <state width="2087" height="171" key="GridCell.Tab.0.bottom/59.27.2133.1206@59.27.2133.1206" timestamp="1602613791598" />
+    <state width="2087" height="171" key="GridCell.Tab.0.center" timestamp="1602613791598">
+      <screen x="59" y="27" width="2133" height="1206" />
+    </state>
+    <state width="2146" height="326" key="GridCell.Tab.0.center/0.27.2192.1206@0.27.2192.1206" timestamp="1602510993003" />
+    <state width="2087" height="171" key="GridCell.Tab.0.center/59.27.2133.1206@59.27.2133.1206" timestamp="1602613791598" />
+    <state width="2087" height="171" key="GridCell.Tab.0.left" timestamp="1602613791598">
+      <screen x="59" y="27" width="2133" height="1206" />
+    </state>
+    <state width="2146" height="326" key="GridCell.Tab.0.left/0.27.2192.1206@0.27.2192.1206" timestamp="1602510993002" />
+    <state width="2087" height="171" key="GridCell.Tab.0.left/59.27.2133.1206@59.27.2133.1206" timestamp="1602613791598" />
+    <state width="2087" height="171" key="GridCell.Tab.0.right" timestamp="1602613791598">
+      <screen x="59" y="27" width="2133" height="1206" />
+    </state>
+    <state width="2146" height="326" key="GridCell.Tab.0.right/0.27.2192.1206@0.27.2192.1206" timestamp="1602510993005" />
+    <state width="2087" height="171" key="GridCell.Tab.0.right/59.27.2133.1206@59.27.2133.1206" timestamp="1602613791598" />
+    <state x="709" y="241" width="770" height="784" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602510506655">
+      <screen x="0" y="27" width="2192" height="1206" />
+    </state>
+    <state x="709" y="241" width="770" height="784" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.2192.1206@0.27.2192.1206" timestamp="1602510506655" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/2_2_Vectors$Unittests_for_tests_VectorTests_test_comparissons.coverage" NAME="Unittests for tests.VectorTests.test_comparissons Coverage Results" MODIFIED="1602510980584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2_2_Vectors$Unittests_in_tests_py.coverage" NAME="Unittests in tests.py Coverage Results" MODIFIED="1602609385459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

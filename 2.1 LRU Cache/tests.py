@@ -38,6 +38,11 @@ class LruTests(unittest.TestCase):
         lru = LRUCache(10)
         self.assertEqual(lru.get('Anon'), '')
 
+    def test_update(self):
+        lru = LRUCache(2)
+        lru.update({'1': 'one', '2': 'two', '3': 'three'})
+        self.assertEqual(tuple(lru.keys()), ('2', '3'))
+
 
 if __name__ == '__main__':
     unittest.main()

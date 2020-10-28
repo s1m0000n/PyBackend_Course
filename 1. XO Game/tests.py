@@ -39,10 +39,10 @@ class Parsing(unittest.TestCase):
             self.assertEqual(XOGame.parse(key), cases[key])
 
     # В интерпретаторе всё работает как и планировалось, поднимается ValueError, unittest не отлавливает???
-    # def test_ValueError(self):
-    #     cases = ('abc', 'a b', 'a, b', '0 a 1', '1_1')
-    #     for s in cases:
-    #         self.assertRaises(ValueError, XOGame.parse, s)
+    def test_ValueError(self):
+        cases = ('abc', 'a b', 'a, b', '0 a 1', '1_1')
+        for s in cases:
+            self.assertRaises(ValueError, XOGame.parse, s)
 
 
 class IsWinner(unittest.TestCase):

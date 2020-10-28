@@ -1,8 +1,5 @@
 class Vector(list):
     """Vector implementation based on lists"""
-    def __init__(self, initial_data):
-        super().__init__(initial_data)
-
     def __add__(self, other):
         if not isinstance(other, (list, Vector)):
             raise ValueError

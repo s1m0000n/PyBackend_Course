@@ -20,9 +20,6 @@ class LRUCache(OrderedDict):
         if len(self) > self.size:
             del self[next(iter(self))]
 
-    def __delitem__(self, key: str) -> None:
-        super().__delitem__(key)
-
     def set(self, key: str, value: str) -> None:
         """Higher level wrapper of __setitem__"""
         self[key] = value
