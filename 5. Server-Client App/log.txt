@@ -1,0 +1,38 @@
+10-Nov-20 20:18:24 - Cancelled shutting down
+10-Nov-20 20:18:24 - Server started in regular mode
+10-Nov-20 20:18:25 - Loading dictionaries from /home/s1m00n/PyBackend_Course/5. Server-Client App/venv/lib/python3.9/site-packages/pymorphy2_dicts_ru/data
+10-Nov-20 20:18:25 - format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+10-Nov-20 20:18:25 - Now listening on localhost:5000
+10-Nov-20 20:20:31 - Server started in regular mode
+10-Nov-20 20:20:32 - Loading dictionaries from /home/s1m00n/PyBackend_Course/5. Server-Client App/venv/lib/python3.9/site-packages/pymorphy2_dicts_ru/data
+10-Nov-20 20:20:32 - format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+10-Nov-20 20:20:32 - Now listening on localhost:5000
+10-Nov-20 20:20:36 - Connected ('127.0.0.1', 51850)
+10-Nov-20 20:20:36 - Request #1: w1=королева&w2=учёба&format=xml
+10-Nov-20 20:20:36 - Responded in 0.02 sec
+10-Nov-20 20:20:36 - Total connection time: 0.02 sec
+10-Nov-20 20:20:36 - Total requests: 1
+10-Nov-20 20:20:36 - Connection with ('127.0.0.1', 51850) closed
+10-Nov-20 20:20:40 - Cancelled shutting down
+10-Nov-20 20:21:11 - Server started in regular mode
+10-Nov-20 20:21:12 - Loading dictionaries from /home/s1m00n/PyBackend_Course/5. Server-Client App/venv/lib/python3.9/site-packages/pymorphy2_dicts_ru/data
+10-Nov-20 20:21:12 - format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+10-Nov-20 20:21:12 - Now listening on localhost:5000
+10-Nov-20 20:21:14 - Connected ('127.0.0.1', 51882)
+10-Nov-20 20:21:14 - Request #1: w1=королева&w2=учёба&format=xml
+10-Nov-20 20:21:14 - Responded in 0.02 sec
+10-Nov-20 20:21:14 - Total connection time: 0.02 sec
+10-Nov-20 20:21:14 - Total requests: 1
+10-Nov-20 20:21:14 - Connection with ('127.0.0.1', 51882) closed
+10-Nov-20 20:21:20 - Cancelled shutting down
+10-Nov-20 20:21:20 - Server started in regular mode
+10-Nov-20 20:21:21 - Loading dictionaries from /home/s1m00n/PyBackend_Course/5. Server-Client App/venv/lib/python3.9/site-packages/pymorphy2_dicts_ru/data
+10-Nov-20 20:21:21 - format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+10-Nov-20 20:21:21 - Now listening on localhost:5000
+10-Nov-20 20:21:23 - Connected ('127.0.0.1', 51890)
+10-Nov-20 20:21:23 - Request #1: w1=королева&w2=учёба&format=xml
+10-Nov-20 20:21:23 - Responded in 0.01 sec
+10-Nov-20 20:21:23 - Total connection time: 0.01 sec
+10-Nov-20 20:21:23 - Total requests: 1
+10-Nov-20 20:21:23 - Connection with ('127.0.0.1', 51890) closed
+10-Nov-20 20:21:29 - Server shutdown

@@ -1,0 +1,3 @@
+[console_scripts]
+navec-train = navec.train.ctl.__main__:main
+
