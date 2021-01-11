@@ -121,8 +121,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = '/'
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = '7684120'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'Jycko4WY5cwSYS5uSh9r'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '<Your VK Key>'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '<Your VK Secret>'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
