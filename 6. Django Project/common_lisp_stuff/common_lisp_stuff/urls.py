@@ -14,11 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from tldr.views import FunctionList, FunctionDetail
+from django.urls import path, include
+from tldr.views import FunctionList, FunctionDetail, main_view, logout, search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', FunctionList.as_view()),
     path('api/<int:pk>/', FunctionDetail.as_view()),
+    path('', main_view),
+    path('', include('social_django.urls')),
+    path('logout', logout),
+    path('api/search', search)
 ]
+
+LOGIN_REDIRECT_URL = '/'

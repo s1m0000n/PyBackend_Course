@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Common Lisp TLDR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .hvr-grow {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+
+        .hvr-grow:hover,
+        .hvr-grow:focus,
+        .hvr-grow:active {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    {% if user.is_authenticated %}
+        <div class="card shadow mt-4" style="border-radius: 30px">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex align-items-center mx-4">
+                    <p class="card-text">Logged in as {{ user.username }}</p>
+                </div>
+                <div>
+                    <a href="/api" class="btn btn-outline-dark my-2 hvr-grow" style="border-radius: 30px">Edit
+                        Snippets</a>
+                    <a href="/logout" class="btn btn-outline-dark m-2 hvr-grow" style="border-radius: 30px">Logout</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="jumbotron mt-4 shadow" style="border-radius: 30px;">
+        <h1 class="display-4">TL;DR for Lisp</h1>
+        <p class="lead">This is a simple project to learn Backend Development</p>
+    </div>
+    {% if user.is_authenticated %}
+
+    {% else %}
+        <h4>Log in to manage snippets and more!</h4>
+        {% if from_api %}
+            <p>
+                <mark>You need to be logged in to access REST API</mark>
+            </p>
+        {% endif %}
+        <div class="card shadow mt-4" style="border-radius: 30px">
+            <div class="d-flex flex-row justify-content-between">
+                <form method="post" action="/">
+                    {% csrf_token %}
+                    <div class="d-flex flex-row">
+                        <input id="username" name="username" style="border-radius: 30px" type="text"
+                               class="form-control m-2{% if credentials == False %} is-invalid{% endif %}"
+                               placeholder="Login">
+                        <input id="password" name="password" style="border-radius: 30px" type="password"
+                               class="form-control my-2{% if credentials == False %} is-invalid{% endif %}"
+                               placeholder="Password">
+                        <button style="border-radius: 30px" class="btn btn-outline-dark m-2">Login</button>
+                    </div>
+                </form>
+                <div class="d-flex flex-row">
+                    <p class="text-muted my-3 mr-2">Sign in with</p>
+                    <a class="btn btn-outline-dark hvr-grow mr-2 my-2" href="/login/vk-oauth2"
+                       style="border-radius: 30px">VKontakte</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <h2 class="mt-4">Snippets Collection</h2>
+    <div class="card shadow mt-4" style="border-radius: 30px">
+        <div class="d-flex flex-row">
+            <input style="border-radius: 30px" id="search" type="text" class="my-2 mx-2 form-control"
+                   placeholder="How to append an element to list">
+            <button class="btn btn-outline-dark mr-2 my-2" style="border-radius: 30px" onclick="
+                text = $('#search').val()
+                $.ajax({url: '/api/search', data:{
+                            query: text,
+                        },
+                success: function(data) {
+                    document.getElementById('close_btn').hidden = false
+                    document.getElementById('searchcard').hidden=false
+                    document.getElementById('searchcard').innerHTML = document.getElementById('searchcard').innerHTML + JSON.stringify(data)
+                }})
+            ">Search</button>
+            <button class="btn mr-2 my-2" style="border-radius: 30px" id="close_btn" hidden onclick="
+                document.getElementById('close_btn').hidden = true
+                document.getElementById('searchcard').innerHTML=''
+                document.getElementById('searchcard').hidden=true
+                ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                     class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+        </div>
+        <div id ='searchcard' class="my-2 mx-2" hidden>
+        </div>
+    </div>
+    <h4 class="pt-3">Recently added</h4>
+    <div class="card-columns pt-2">
+        {% for snippet in snippets %}
+            <div class="card shadow hvr-grow" style="border-radius: 30px">
+                <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h5 class="card-title">{{ snippet.name }}</h5>
+                        <button class="btn" id="btn_{{ snippet.name }}_unfold"
+                                style="border-radius: 50px" onclick="
+                                document.getElementById('args_{{ snippet.name }}').hidden = false;
+                                document.getElementById('descr_{{ snippet.name }}').hidden = false;
+                                document.getElementById('btn_{{ snippet.name }}_unfold').hidden = true;
+                                document.getElementById('btn_{{ snippet.name }}_fold').hidden = false;
+                                ">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrows-fullscreen"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zM7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="card-text">Call: {{ snippet.call_spec }}</p>
+                    <p class="card-text" id="args_{{ snippet.name }}" hidden>Args: {{ snippet.args }}</p>
+                    <p class="card-text" id="descr_{{ snippet.name }}" hidden>Description: {{ snippet.description }}</p>
+                    <p class="card-text">Examples:<br>{{ snippet.examples }}</p>
+                    <div class="d-flex flex-row justify-content-center">
+                        <button class="btn" id="btn_{{ snippet.name }}_fold"
+                                style="border-radius: 50px" onclick="
+                                document.getElementById('args_{{ snippet.name }}').hidden = true;
+                                document.getElementById('descr_{{ snippet.name }}').hidden = true;
+                                document.getElementById('btn_{{ snippet.name }}_unfold').hidden = false;
+                                document.getElementById('btn_{{ snippet.name }}_fold').hidden = true;
+                                " hidden>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrows-collapse"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zm7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0zm-.5 11.707l-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0v-3.793z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
