@@ -56,7 +56,7 @@
    - [x] Асинхронная запись файлов на диск
 
 12. Docker
-   - [ ] Docker, создание Dockerfile
+   - [x] Docker, создание Dockerfile
    - [ ] Docker Compose для проекта
    - [ ] Makefile
 
